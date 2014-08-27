@@ -2,5 +2,7 @@
 	"name": "stevedore",
 	"version": "0.1.0",
 	"description": "Display loading animation in the terminal",
-	"keywords": ["spinner","loader","cli","terminal","progress","indicator"]
+	"keywords": ["spinner","loader","cli","terminal","progress","indicator"],
+	"repository": "https://github.com/Rich-Harris/stevedore.git",
+	"license": "MIT"
 }
