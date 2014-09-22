@@ -19,7 +19,7 @@ module.exports = function ( options ) {
 
 	tick = function () {
 		var frame = frames[ i++ % frames.length ];
-		process.stderr.write( '\u001b[s' + frame + ' ' + message + '\u001b[u' );
+		process.stderr.write( '\u001b[s' + frame + ' ' + message + '\u001b[u\u001b[0G' );
 	};
 
 	update = function () {
