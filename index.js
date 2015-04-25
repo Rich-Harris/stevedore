@@ -17,10 +17,15 @@ module.exports = function ( options ) {
 	];
 	interval = options.interval || 100;
 
-	tick = function () {
-		var frame = frames[ i++ % frames.length ];
-		process.stderr.write( '\u001b[s' + frame + ' ' + message + '\u001b[u\u001b[0G' );
-	};
+	if ( process.env.CI === 'true' ) {
+		// make this a no-op in CI environments
+		tick = function () {}
+	} else {
+		tick = function () {
+			var frame = frames[ i++ % frames.length ];
+			process.stderr.write( '\u001b[s' + frame + ' ' + message + '\u001b[u\u001b[0G' );
+		};
+	}
 
 	update = function () {
 		tick();
